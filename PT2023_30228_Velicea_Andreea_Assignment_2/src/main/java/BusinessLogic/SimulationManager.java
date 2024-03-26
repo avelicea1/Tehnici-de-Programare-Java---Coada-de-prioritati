@@ -70,11 +70,8 @@ public class SimulationManager implements Runnable {
             peakHour = Integer.MIN_VALUE;
             while(currentTime < timeLimit ) {
                 evolutionQueue = new StringBuilder();
-//                waitingQueue = new StringBuilder();
                 writer.write("Time "+currentTime+"\n");
-                //evolutionQueue.append("Time "+currentTime+"\n");
                 int i=0;
-
                 while(i<generatedTasks.size()) {
                         if (generatedTasks.get(i).getArrivalTime() == currentTime) {
                             scheduler.dispatchTask(generatedTasks.get(i));
